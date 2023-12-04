@@ -13,15 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace akasztoFa {
+namespace akasztoFa
+{
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class Page1 : Page
+    {
+        public Page1()
+        {
             InitializeComponent();
-            Page1 page1 = new Page1();
-            vaszon.Navigate(page1);
+        }
+
+        private void biobutton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void methbutton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

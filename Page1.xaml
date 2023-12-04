@@ -1,0 +1,66 @@
+﻿<Page x:Class="akasztoFa.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:akasztoFa"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="700"
+      Title="Page1">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="677*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="130*"/>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="47*"/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="playerchooser" Width="686" Grid.Row="1" Height="22" RenderTransformOrigin="0.5,0.5">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.079"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <Label Content="Adja meg a nevét:&#xD;&#xA;" Margin="10,12,0,12" Width="105" HorizontalAlignment="Left"/>
+            <Label Content="Adja meg a témakört:&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="28" Width="124"/>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle Stroke="Black" Margin="5,5,5,5" Grid.RowSpan="3"/>
+                <RadioButton x:Name="biobutton" Content="Biológia" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" Checked="biobutton_Checked"/>
+                <RadioButton x:Name="methbutton" Content="Matematika" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="1" VerticalAlignment="Center" Checked="methbutton_Checked"/>
+                <RadioButton x:Name="infobutton" Content="Informatika" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+            </Grid>
+            <Button x:Name="nextbutton" Content="Játék indítása" Margin="603,0,10,0" Grid.Row="6" VerticalAlignment="Center" RenderTransformOrigin="0.546,0.683" Height="27"/>
+            <Label Content="Adja meg a megengedett hibák számát:&#xD;&#xA;" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" RenderTransformOrigin="-0.009,0.18" Height="33" Margin="10,0,0,0">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox Grid.Row="5" TextWrapping="Wrap" Width="680" Height="24"/>
+        </Grid>
+
+    </Grid>
+</Page>
