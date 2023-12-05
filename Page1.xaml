@@ -22,7 +22,7 @@
                 <RowDefinition Height="44*"/>
                 <RowDefinition Height="47*"/>
             </Grid.RowDefinitions>
-            <ComboBox x:Name="playerchooser" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Margin="8,5,8,5">
+            <ComboBox x:Name="playerchooser" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Margin="8,5,8,5" IsEditable="True" FontSize="16">
                 <ComboBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -32,8 +32,8 @@
                     </TransformGroup>
                 </ComboBox.RenderTransform>
             </ComboBox>
-            <Label Content="Adja meg a nevét:&#xD;&#xA;" Margin="298,8,298,0" Width="104" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label Content="Adja meg a témakört:&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="124" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+            <Label Content="Adja meg a nevét:&#xD;&#xA;" Width="141" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Label Content="Adja meg a témakört:&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Height="35" Width="160" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="16" Margin="0,1,0,0"/>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -44,12 +44,12 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Rectangle Stroke="Black" Margin="5,5,5,5" Grid.RowSpan="3"/>
-                <RadioButton x:Name="biobutton" Content="Biológia" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" Checked="biobutton_Checked"/>
-                <RadioButton x:Name="methbutton" Content="Matematika" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="1" VerticalAlignment="Center" Checked="methbutton_Checked"/>
-                <RadioButton x:Name="infobutton" Content="Informatika" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+                <RadioButton x:Name="biobutton" Content="Biológia" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" Checked="biobutton_Checked" FontSize="16"/>
+                <RadioButton x:Name="methbutton" Content="Matematika" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="1" VerticalAlignment="Center" Checked="methbutton_Checked" FontSize="16"/>
+                <RadioButton x:Name="infobutton" Content="Informatika" HorizontalAlignment="Left" Margin="18,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="16"/>
             </Grid>
-            <Button x:Name="nextbutton" Content="Játék indítása" Grid.Row="6" RenderTransformOrigin="0.546,0.683" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" Width="84"/>
-            <Label Content="Adja meg a megengedett hibák számát:&#xD;&#xA;" Grid.Row="4" RenderTransformOrigin="-0.009,0.18" Margin="186,4,186,3" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Width="328" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="nextbutton" Content="Játék indítása" Grid.Row="6" RenderTransformOrigin="0.546,0.683" Height="37" HorizontalAlignment="Center" VerticalAlignment="Center" Width="108" Click="nextbutton_Click" FontSize="16"/>
+            <Label Content="Adja meg a megengedett hibák számát:&#xD;&#xA;" Grid.Row="4" RenderTransformOrigin="-0.009,0.18" Margin="186,4,186,3" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Width="328" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="1"/>
@@ -59,7 +59,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <TextBox Grid.Row="5" TextWrapping="Wrap" Margin="10,10,10,10"/>
+            <TextBox x:Name="hibanumberask" Grid.Row="5" TextWrapping="Wrap" Margin="10,10,10,10" FontSize="16"/>
         </Grid>
 
     </Grid>

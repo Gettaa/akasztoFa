@@ -34,5 +34,15 @@ namespace akasztoFa
         {
 
         }
+
+        private void nextbutton_Click(object sender, RoutedEventArgs e)
+        {
+            int parsedValue = 0;
+            if (int.TryParse(hibanumberask.Text, out parsedValue)) {
+                Page2 page2 = new Page2();
+                Console.WriteLine("kövi lap");
+                NavigationService.Navigate(page2);
+            }
+        }
     }
 }
