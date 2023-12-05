@@ -22,12 +22,12 @@ namespace akasztoFa {
 		}
 	}
 
-    public static class Szavak {
-        public static List<Szo> szavak { get; private set; } = new List<Szo>();
-        public static void General(string[] args) {
+	public static class Szavak {
+		public static List<Szo> List { get; private set; } = new List<Szo>();
+		public static void General(string[] args) {
 			string[] szavakFajl = File.ReadAllLines("szavak.txt", Encoding.UTF8);
-			foreach (string sor in szavakFajl) szavak.Add(new Szo(sor));
-
+			foreach (string sor in szavakFajl) List.Add(new Szo(sor));
+			Console.WriteLine(List.Select(a => a.Text).First());
 		}
 	}
 }
