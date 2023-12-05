@@ -5,15 +5,29 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
+using System.Text;
+
 
 namespace akasztoFa {
 
-    public class Szo {
+	public class Szo {
 
-        string Text;
-        public Szo(string sor) {
-            string[] cuccok = sor.Split(';');
-                
-        }
-    }
+		public string Text { get; private set; }
+		public string Tipus { get; private set; }
+		public Szo(string sor) {
+			string[] cuccok = sor.Split(';');
+			Text = cuccok[0];
+			Tipus = cuccok[1];
+		}
+	}
+
+    public static class Szavak {
+        public static List<Szo> szavak { get; private set; } = new List<Szo>();
+        public static void General(string[] args) {
+			string[] szavakFajl = File.ReadAllLines("szavak.txt", Encoding.UTF8);
+			foreach (string sor in szavakFajl) szavak.Add(new Szo(sor));
+
+		}
+	}
 }
