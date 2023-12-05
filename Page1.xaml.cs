@@ -20,6 +20,7 @@ namespace akasztoFa
     /// </summary>
     public partial class Page1 : Page
     {
+
         public Page1()
         {
             InitializeComponent();
@@ -27,12 +28,16 @@ namespace akasztoFa
 
         private void biobutton_Checked(object sender, RoutedEventArgs e)
         {
-
+            modvalto.Fill = new SolidColorBrush(Color.FromRgb(163, 210, 168));
         }
 
         private void methbutton_Checked(object sender, RoutedEventArgs e)
         {
-
+            modvalto.Fill = new SolidColorBrush(Color.FromRgb(118, 155, 189));
+        }
+        private void infobutton_Checked(object sender, RoutedEventArgs e)
+        {
+            modvalto.Fill = new SolidColorBrush(Color.FromRgb(121, 103, 191));
         }
 
         private void nextbutton_Click(object sender, RoutedEventArgs e)
@@ -44,5 +49,6 @@ namespace akasztoFa
                 NavigationService.Navigate(page2);
             }
         }
+
     }
 }
