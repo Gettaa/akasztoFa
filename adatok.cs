@@ -15,11 +15,11 @@ namespace akasztoFa {
 	public class Szo {
 
 		public string Text { get; private set; }
-		public string Tipus { get; private set; }
+		public char Tipus { get; private set; }
 		public Szo(string sor) {
 			string[] cuccok = sor.Split(';');
 			Text = cuccok[0];
-			Tipus = cuccok[1];
+			Tipus = cuccok[1].ToCharArray()[0];
 		}
 	}
 
@@ -27,22 +27,22 @@ namespace akasztoFa {
 
 		// jatekosok.txt feldolgozasa
 		public string Nev { get; private set; }
-		public int b_Nyert { get; private set; }
-		public int b_Vesztett { get; private set; }
-		public int m_Nyert { get; private set; }
-		public int m_Vesztett { get; private set; }
-		public int i_Nyert { get; private set; }
-		public int i_Vesztett { get; private set; }
+		public int B_Nyert { get; private set; }
+		public int B_Vesztett { get; private set; }
+		public int M_Nyert { get; private set; }
+		public int M_Vesztett { get; private set; }
+		public int I_Nyert { get; private set; }
+		public int I_Vesztett { get; private set; }
 
 		public Jatekos(string sor) {
 			string[] adatok = sor.Split(';');
 			Nev = adatok[0];
-			b_Nyert = int.Parse(adatok[1]);
-			b_Vesztett = int.Parse(adatok[2]);
-			m_Nyert = int.Parse(adatok[3]);
-			m_Vesztett = int.Parse(adatok[4]);
-			i_Nyert = int.Parse(adatok[5]);
-			i_Vesztett = int.Parse(adatok[6]);
+			B_Nyert = int.Parse(adatok[1]);
+			B_Vesztett = int.Parse(adatok[2]);
+			M_Nyert = int.Parse(adatok[3]);
+			M_Vesztett = int.Parse(adatok[4]);
+			I_Nyert = int.Parse(adatok[5]);
+			I_Vesztett = int.Parse(adatok[6]);
 		}
 	}
 
