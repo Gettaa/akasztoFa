@@ -10,6 +10,9 @@ using System.Text;
 
 
 namespace akasztoFa {
+
+	// szavak.cs Linq-val való használatra készíti fel szavak.txt-t
+
 	public class Szo {
 
 		public string Text { get; private set; }
@@ -22,11 +25,12 @@ namespace akasztoFa {
 	}
 
 	public static class Szavak {
-		public static List<Szo> List { get; private set; } = new List<Szo>();
-		public static void General(string[] args) {
+
+		public static List<Szo> Lista = new List<Szo>();
+
+		public static void General() {
 			string[] szavakFajl = File.ReadAllLines("szavak.txt", Encoding.UTF8);
-			foreach (string sor in szavakFajl) List.Add(new Szo(sor));
-			Console.WriteLine(List.Select(a => a.Text).First());
+			foreach (string sor in szavakFajl) Lista.Add(new Szo(sor));
 		}
 	}
 }
