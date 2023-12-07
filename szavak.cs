@@ -10,12 +10,11 @@ using System.Text;
 
 
 namespace akasztoFa {
-
 	public class Szo {
 
 		public string Text { get; private set; }
 		public string Tipus { get; private set; }
-		public Szo(string sor) {
+        public Szo(string sor) {
 			string[] cuccok = sor.Split(';');
 			Text = cuccok[0];
 			Tipus = cuccok[1];
