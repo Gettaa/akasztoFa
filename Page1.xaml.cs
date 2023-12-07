@@ -21,29 +21,33 @@ namespace akasztoFa
     /// </summary>
     public partial class Page1 : Page {
 
-        public char mode = 'b';
+        public char Mode = 'b';
         public Page1() {
             InitializeComponent();
     }
 
         private void biobutton_Checked(object sender, RoutedEventArgs e) {
             modvalto.Fill = new SolidColorBrush(Color.FromRgb(163, 210, 168));
+            Mode = 'b';
         }
 
         private void methbutton_Checked(object sender, RoutedEventArgs e) {
             modvalto.Fill = new SolidColorBrush(Color.FromRgb(118, 155, 189));
+            Mode = 'm';
         }
         private void infobutton_Checked(object sender, RoutedEventArgs e) {
             modvalto.Fill = new SolidColorBrush(Color.FromRgb(121, 103, 191));
+            Mode = 'i';
         }
 
         private void nextbutton_Click(object sender, RoutedEventArgs e) {
             int parsedValue = 0;
-            if (int.TryParse(hibanumberask.Text, out parsedValue)) {
+            if (int.TryParse(hibanumberask.Text, out parsedValue) && playerchooser.Text.Length > 0) {
                 Page2 page2 = new Page2();
                 Console.WriteLine("kövi lap");
                 NavigationService.Navigate(page2);
             }
+            else hibanumberask.Text = "Csak szám lehet!";
         }
     }
 }
