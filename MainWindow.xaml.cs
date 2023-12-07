@@ -21,7 +21,7 @@ namespace akasztoFa {
         public MainWindow() {
             InitializeComponent();
             Page1 page1 = new Page1();
-            Szavak.General();
+            Adatok.General();
             vaszon.Navigate(page1);
         }
     }
