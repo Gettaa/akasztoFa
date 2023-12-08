@@ -24,6 +24,8 @@ namespace akasztoFa
         public char Mode = 'b';
         public Page1() {
             InitializeComponent();
+            Jatek j = new Jatek("Béla",'i');
+            Console.WriteLine(j.ValasztottJatekos.I_Nyert);
     }
 
         private void biobutton_Checked(object sender, RoutedEventArgs e) {
