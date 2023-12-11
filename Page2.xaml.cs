@@ -35,9 +35,10 @@ namespace akasztoFa
 				betu6, betu7, betu8, betu9, betu10,
 				betu11, betu12, betu13
 			};
-			labellList.RemoveRange(szo.Length, labellList.Count);
-			labellList.TrimExcess();
-			labellList.ForEach(l => l.Visibility = Visibility.Visible);
+			Console.WriteLine(szo.Length);
+			for (int i = 0; i < szo.Length; i++) {
+				labellList[i].Visibility = Visibility.Visible;
+			}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
