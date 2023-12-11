@@ -115,19 +115,43 @@
     <Resource Include="szavak.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\r1.png" />
-    <Resource Include="assets\r10.png" />
-    <Resource Include="assets\r11.png" />
-    <Resource Include="assets\r12.png" />
-    <Resource Include="assets\r2.png" />
-    <Resource Include="assets\r3.png" />
-    <Resource Include="assets\r4.png" />
-    <Resource Include="assets\r5.png" />
-    <Resource Include="assets\r6.png" />
-    <Resource Include="assets\r7.png" />
-    <Resource Include="assets\r8.png" />
-    <Resource Include="assets\r9.png" />
-    <Resource Include="assets\rh.png" />
+    <Resource Include="r1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="r11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

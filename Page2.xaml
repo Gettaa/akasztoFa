@@ -72,6 +72,20 @@
             <Label x:Name="betu11" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="366,150,0,0" VerticalAlignment="Top" FontSize="25" Width="21" Height="49" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
             <Label x:Name="betu12" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="392,150,0,0" VerticalAlignment="Top" FontSize="25" Width="21" Height="49" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
             <Label x:Name="betu13" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="418,150,0,0" VerticalAlignment="Top" FontSize="25" Width="21" Height="49" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+            <Rectangle Stroke="Black" Margin="10,10,10,10"/>
+            <Image x:Name="r1" Margin="38,323,182,10" Source="/r1.png" Visibility="Hidden"/>
+            <Image x:Name="r2" Margin="41,16,233,23" Source="/r2.png" StretchDirection="UpOnly" Stretch="None" Visibility="Hidden"/>
+            <Image x:Name="r3" Margin="71,26,25,304" Source="/r3.png" Stretch="None" Visibility="Hidden"/>
+            <Image x:Name="r4" Height="49" Margin="232,48,78,266" Width="9" Source="/r4.png" Stretch="None" Visibility="Hidden"/>
+            <Image x:Name="r5" Margin="206,88,77,237" Source="/r5.png" Visibility="Hidden"/>
+            <Image x:Name="r6" Margin="223,118,83,145" Source="/r6.png" Visibility="Hidden"/>
+            <Image x:Name="r7" Margin="204,129,86,172" Source="/r7.png" Visibility="Hidden"/>
+            <Image x:Name="r8" Margin="230,128,64,172" Source="/r8.png" Visibility="Hidden"/>
+            <Image x:Name="r9" Margin="228,209,74,86" Source="/r9.png" Visibility="Hidden"/>
+            <Image x:Name="r10" Margin="213,210,85,87" Source="/r10.png" Visibility="Hidden"/>
+            <Image x:Name="r11" Margin="74,46,146,217" Source="/r11.png" Visibility="Hidden"/>
+            <Image x:Name="r12" Margin="203,91,81,240" Source="/r12.png" Visibility="Hidden"/>
+            <Image x:Name="rh" Margin="205,95,87,240" Source="/rh.png" RenderTransformOrigin="0.509,0.5" Visibility="Hidden"/>
         </Grid>
     </Grid>
 </Page>
