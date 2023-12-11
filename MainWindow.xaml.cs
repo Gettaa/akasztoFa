@@ -20,7 +20,7 @@ namespace akasztoFa {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
-			Adatok.General();
+			Adatok.Betolt();
 			Page1 page1 = new Page1();
             vaszon.Navigate(page1);
         }

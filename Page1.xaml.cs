@@ -16,15 +16,15 @@ using System.Windows.Shapes;
 
 namespace akasztoFa
 {
-	/// <summary>
-	/// Interaction logic for Page1.xaml
-	/// </summary>
 	public partial class Page1 : Page {
 
-		public char Mode = 'b';
+		public static char Mode = 'b';
+		public static string jatekosNev = "Guest";
+		public static int hibaSzam = 14;
+
 		public Page1() {
 			InitializeComponent();
-	}
+		}
 
 		private void biobutton_Checked(object sender, RoutedEventArgs e) {
 			modvalto.Fill = new SolidColorBrush(Color.FromRgb(163, 210, 168));
@@ -41,13 +41,13 @@ namespace akasztoFa
 		}
 
 		private void nextbutton_Click(object sender, RoutedEventArgs e) {
-			int parsedValue = 0;
-			if (playerchooser.Text.Length > 0 && int.TryParse(hibanumberask.Text, out parsedValue) && parsedValue >= 6 && parsedValue <= 14) {
+			if (int.TryParse(hibanumberask.Text, out int parsedValue) && parsedValue >= 6 && parsedValue <= 14) {
+				hibaSzam = parsedValue;
+				jatekosNev = playerchooser.Text.Length > 0 ? playerchooser.Text : "Guest";
 				Page2 page2 = new Page2();
 				Console.WriteLine(parsedValue);
 				NavigationService.Navigate(page2);
-			}
-			else hibanumberask.Text = "Csak szám lehet 6 és 14 között!";
+			} else hibanumberask.Text = "Csak szám lehet 6 és 14 között!";
 		}
 	}
 }

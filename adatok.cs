@@ -51,11 +51,19 @@ namespace akasztoFa {
 		public static List<Szo> Szavak = new List<Szo>();
 		public static List<Jatekos> Jatekosok = new List<Jatekos>();
 
-		public static void General() {
+		public static void Betolt() {
 			string[] szavakFajl = File.ReadAllLines("szavak.txt", Encoding.UTF8);
 			foreach (string sor in szavakFajl) Szavak.Add(new Szo(sor));
 			string[] jatekosokFajl = File.ReadAllLines("jatekosok.txt", Encoding.UTF8);
 			foreach (string sor in jatekosokFajl) Jatekosok.Add(new Jatekos(sor));
+		}
+
+		public static void Ment() {
+			List<string> irandoJatekosok = new List<string>();
+			Jatekosok.ForEach(s => irandoJatekosok.Add(
+				$"{s.Nev};{s.B_Nyert};{s.B_Vesztett};{s.M_Nyert};{s.M_Vesztett};{s.I_Nyert};{s.I_Vesztett}"
+			));
+			File.WriteAllLines("jatekosok.txt", irandoJatekosok);
 		}
 	}
 }
