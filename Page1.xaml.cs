@@ -41,13 +41,13 @@ namespace akasztoFa
 		}
 
 		private void nextbutton_Click(object sender, RoutedEventArgs e) {
-			if (int.TryParse(hibanumberask.Text, out int parsedValue) && parsedValue >= 6 && parsedValue <= 14) {
+			if (int.TryParse(hibanumberask.Text, out int parsedValue) && parsedValue >= 6 && parsedValue <= 12) {
 				hibaSzam = parsedValue;
 				jatekosNev = playerchooser.Text.Length > 0 ? playerchooser.Text : "Guest";
 				Page2 page2 = new Page2();
 				Console.WriteLine(parsedValue);
 				NavigationService.Navigate(page2);
-			} else hibanumberask.Text = "Csak szám lehet 6 és 14 között!";
+			} else hibanumberask.Text = "Csak szám lehet 6 és 12 között!";
 		}
 	}
 }
