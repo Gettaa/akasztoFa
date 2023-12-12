@@ -45,7 +45,6 @@ namespace akasztoFa
 				hibaSzam = parsedValue;
 				jatekosNev = playerchooser.Text.Length > 0 ? playerchooser.Text : "Guest";
 				Page2 page2 = new Page2();
-				Console.WriteLine(parsedValue);
 				NavigationService.Navigate(page2);
 			} else hibanumberask.Text = "Csak szám lehet 6 és 12 között!";
 		}
