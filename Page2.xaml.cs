@@ -33,12 +33,12 @@ namespace akasztoFa
 			labellList = new List<Label> {
 				betu1, betu2, betu3, betu4, betu5,
 				betu6, betu7, betu8, betu9, betu10,
-				betu11, betu12, betu13
+				betu11, betu12, betu13, betu14
 			};
-			Console.WriteLine(szo.Length);
-			for (int i = 0; i < szo.Length; i++) {
-				labellList[i].Visibility = Visibility.Visible;
-			}
+			Console.WriteLine($"\n\n\n{szo.Length}");
+			labellList.RemoveRange(szo.Length, labellList.Count - szo.Length);
+			labellList.TrimExcess();
+			labellList.ForEach(l => l.Visibility = Visibility.Visible);
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
