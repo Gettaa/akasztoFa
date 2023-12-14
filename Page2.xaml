@@ -46,7 +46,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition/>
 			</Grid.RowDefinitions>
-			<TextBox x:Name="betutipp" Grid.Column="0" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="16"/>
+			<TextBox x:Name="betutipp" Grid.Column="0" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="16" TextChanged="betutipp_TextChanged"/>
 			<TextBox x:Name="fulltipp" Grid.Column="1" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="16"/>
 			<Button x:Name="trybutton" Grid.Column="2" Content="Próba" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="60" Click="Button_Click"/>
 		</Grid>
@@ -58,20 +58,19 @@
 			<Grid.RowDefinitions>
 				<RowDefinition/>
 			</Grid.RowDefinitions>
-			<Label x:Name="betu1" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="85,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu2" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu3" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="120,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu4" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="155,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu5" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="190,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu6" Grid.Column="1" Content="_" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu7" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="260,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu8" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="295,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="50" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu9" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="377,118,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu10" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="314,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu11" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="340,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu12" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="366,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu13" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="392,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-			<Label x:Name="betu14" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="418,150,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu1" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="13,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu2" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="43,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu3" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="78,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu4" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="112,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu5" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="148,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu6" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="182,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu7" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="218,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu8" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="253,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="50" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu9" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="288,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu10" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="323,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu11" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="358,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu12" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="393,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
+			<Label x:Name="betu13" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="428,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
 			<Rectangle Stroke="Black" VerticalAlignment="Top" Height="343" Margin="0,10,0,0" HorizontalAlignment="Left" Width="300"/>
 			<Image x:Name="r1" Source="/r1.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="38" Width="112" Margin="32,320,0,0" Visibility="Hidden"/>
 			<Image x:Name="r2" StretchDirection="UpOnly" Source="/r2.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top" Height="323" Width="48" Margin="41,17,0,0" Visibility="Hidden"/>

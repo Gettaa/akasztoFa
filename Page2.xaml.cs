@@ -21,43 +21,32 @@ namespace akasztoFa
 	public partial class Page2 : Page
 	{
 		private Jatek jatek;
-		private char[] szo;
-		private List<char> kitalalt_char = new List<char>();
-		private List<char> rossz_char = new List<char>();
-		List<Label> labellList;
+		public static List<Label> labellList;
+
 		public Page2()
 		{
 			InitializeComponent();
 			jatek = new Jatek(Page1.jatekosNev, Page1.Mode, Page1.hibaSzam);
 			Console.WriteLine(jatek.ValasztottSzo);
-			szo = jatek.ValasztottSzo.ToCharArray();
 			labellList = new List<Label> {
 				betu1, betu2, betu3, betu4, betu5,
 				betu6, betu7, betu8, betu9, betu10,
-				betu11, betu12, betu13, betu14
+				betu11, betu12, betu13
 			};
-			labellList.RemoveRange(szo.Length, labellList.Count - szo.Length);
+			labellList.ForEach(l => l.Visibility = Visibility.Hidden);
+			labellList.RemoveRange(jatek.ValasztottSzo.Length, labellList.Count - jatek.ValasztottSzo.Length);
 			labellList.TrimExcess();
 			labellList.ForEach(l => l.Visibility = Visibility.Visible);
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-			SortChar(betutipp.Text.ToLower().First());
-			for (int i = 0; i < szo.Length; i++) {
-				char szoch = szo[i];
-				if (kitalalt_char.Contains(szoch)) {
-					labellList[i].Content = szoch.ToString();
-				}
-			}
+			jatek.CheckWord(fulltipp.Text);
 		}
 
-		private void SortChar(char ch) {
-			ch = betutipp.Text.ToString().First();
-			if (jatek.ContainsChar(ch) && !kitalalt_char.Contains(ch)) kitalalt_char.Add(ch);
-			else if (jatek.ContainsChar(ch) && kitalalt_char.Contains(ch)) Console.WriteLine("Mar volt helyes tipp");
-			if (!jatek.ContainsChar(ch) && !rossz_char.Contains(ch)) rossz_char.Add(ch);
-			else if (!jatek.ContainsChar(ch) && rossz_char.Contains(ch)) Console.WriteLine("Mar volt hibas tipp");
+		private void betutipp_TextChanged(object sender, TextChangedEventArgs e) {
+			if (betutipp.Text.Length > 0) jatek.CheckChar(betutipp.Text.ToLower().First());
+			if (betutipp.Text.Length > 1) betutipp.Text = "";
 		}
 	}
 }
