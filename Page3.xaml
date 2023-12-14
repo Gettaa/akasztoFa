@@ -1,0 +1,22 @@
+﻿<Page x:Class="akasztoFa.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:akasztoFa"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="62*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="neveredmeny" Content="x eddigi eredményei:" FontSize="18" Margin="292,12,323,12"/>
+        <ListBox x:Name="listeredmeny" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,10" BorderBrush="#FF6AACB9" BorderThickness="5,5,5,5" FontSize="16" SelectionChanged="ListBox_SelectionChanged"/>
+    </Grid>
+</Page>

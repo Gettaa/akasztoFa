@@ -59,7 +59,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <TextBox x:Name="hibanumberask" Grid.Row="5" TextWrapping="Wrap" Margin="10,10,10,10" FontSize="16" Text="6-14"/>
+            <TextBox x:Name="hibanumberask" Grid.Row="5" TextWrapping="Wrap" Margin="10,10,10,10" FontSize="16" Text="6-12"/>
         </Grid>
 
     </Grid>
