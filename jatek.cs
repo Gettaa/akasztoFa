@@ -15,6 +15,7 @@ namespace akasztoFa {
 		public List<char> kitalalt_char = new List<char>();
 		public List<char> rossz_char = new List<char>();
 		public int hibaszam { get; private set; }
+		public string allapot { get; private set; } = "folyamatban";
 
 		public Jatek(string jatekosNev, char tipus, int enteredSzam) {
 			max_hibaszam = enteredSzam;
@@ -28,31 +29,8 @@ namespace akasztoFa {
 			if (Adatok.Jatekosok.Where(s => s.Nev == jatekosNev).Count() == 0) 
 				Adatok.Jatekosok.Add(new Jatekos($"{jatekosNev};0;0;0;0;0;0"));
 			ValasztottJatekos = Adatok.Jatekosok.Where(s => s.Nev == jatekosNev).First();
-		}
 
-		public bool ContainsChar(char ch) {
-			ch = ch.ToString().ToLower().ToCharArray()[0];
-			return ValasztottSzo.ToCharArray().Contains(ch);
-		}
-
-		public void CheckWord(string guess) {
-			guess = guess.ToLower();
-			if (guess == ValasztottSzo) foreach (char ch in ValasztottSzo) CheckChar(ch);
-			else { hibaszam = max_hibaszam; }
-		}
-
-		public void SortChar(char ch) {
-			if (ContainsChar(ch) && !kitalalt_char.Contains(ch)) kitalalt_char.Add(ch);
-			else if (ContainsChar(ch) && kitalalt_char.Contains(ch)) Console.WriteLine("Mar volt helyes tipp");
-			if (!ContainsChar(ch) && !rossz_char.Contains(ch)) rossz_char.Add(ch);
-			else if (!ContainsChar(ch) && rossz_char.Contains(ch)) Console.WriteLine("Mar volt hibas tipp");
-		}
-
-
-		public void CheckChar(char ch) {
-			SortChar(ch);
-			UpdateLabels();
-			Console.WriteLine($"Próbált, nem helyes karakterek: {string.Join(", ", rossz_char)}");
+			Console.WriteLine(ValasztottSzo);
 		}
 
 		private void UpdateLabels() {
@@ -62,6 +40,48 @@ namespace akasztoFa {
 					Page2.labellList[i].Content = szoch.ToString();
 				}
 			}
+		}
+
+		private bool ContainsChar(char ch) {
+			ch = char.ToLower(ch);
+			return ValasztottSzo.Contains(ch);
+		}
+
+		private void SortChar(char ch) {
+			if (ContainsChar(ch) && !kitalalt_char.Contains(ch)) kitalalt_char.Add(ch);
+			else if (ContainsChar(ch) && kitalalt_char.Contains(ch)) Console.WriteLine("Mar volt helyes tipp");
+			if (!ContainsChar(ch) && !rossz_char.Contains(ch)) rossz_char.Add(ch);
+			else if (!ContainsChar(ch) && rossz_char.Contains(ch)) Console.WriteLine("Mar volt hibas tipp");
+			rossz_char = rossz_char.Distinct().ToList();
+			kitalalt_char = kitalalt_char.Distinct().ToList();
+			hibaszam = rossz_char.Count;
+		}
+
+		private void CheckProgress() {
+			if (hibaszam >= max_hibaszam) {
+				allapot = "vesztett";
+				Adatok.Ment();
+			}
+			else if (kitalalt_char.Count == ValasztottSzo.Distinct().ToList().Count) {
+				allapot = "nyert";
+				Adatok.Ment();
+			}
+			Console.WriteLine(allapot);
+		}
+
+		public void CheckChar(char ch) {
+			SortChar(ch);
+			UpdateLabels();
+			CheckProgress();
+		}
+
+		public void CheckWord(string guess) {
+			guess = guess.ToLower();
+			if (guess == ValasztottSzo) {
+				foreach (char ch in ValasztottSzo) CheckChar(ch);
+			}
+			else { hibaszam = max_hibaszam; }
+			CheckProgress();
 		}
 	}
 }
