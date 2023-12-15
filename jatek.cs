@@ -17,8 +17,11 @@ namespace akasztoFa {
 		public int hibaszam { get; private set; }
 		public string allapot { get; private set; } = "folyamatban";
 
+		private char Tipus;
+
 		public Jatek(string jatekosNev, char tipus, int enteredSzam) {
 			max_hibaszam = enteredSzam;
+			Tipus = tipus;
 			ValasztottSzo = Adatok.Szavak
 				.Where(s => s.Tipus == tipus)
 				.OrderBy(s => Guid.NewGuid())
@@ -57,14 +60,39 @@ namespace akasztoFa {
 			hibaszam = rossz_char.Count;
 		}
 
+		private void Ment() {
+			bool a;
+			if (allapot == "vesztett") a = false;
+			else if (allapot == "nyert") a = true;
+			else return;
+
+			switch (Tipus) {
+				case 'b':
+					if (a) ValasztottJatekos.B_Nyert++;
+					else if (!a) ValasztottJatekos.B_Vesztett++;
+					break;
+				case 'm':
+					if (a) ValasztottJatekos.M_Nyert++;
+					else if (!a) ValasztottJatekos.M_Vesztett++;
+					break;
+				case 'i':
+					if (a) ValasztottJatekos.I_Nyert++;
+					else if (!a) ValasztottJatekos.I_Vesztett++;
+					break;
+				default:
+					break;
+			}
+			Adatok.Ment();
+		}
+
 		private void CheckProgress() {
 			if (hibaszam >= max_hibaszam) {
 				allapot = "vesztett";
-				Adatok.Ment();
+				Ment();
 			}
 			else if (kitalalt_char.Count == ValasztottSzo.Distinct().ToList().Count) {
 				allapot = "nyert";
-				Adatok.Ment();
+				Ment();
 			}
 			Console.WriteLine(allapot);
 		}
