@@ -26,7 +26,8 @@ namespace akasztoFa
 		public Page2()
 		{
 			InitializeComponent();
-			jatek = new Jatek(Page1.jatekosNev, Page1.Mode, Page1.hibaSzam);
+            jatek = new Jatek(Page1.jatekosNev, Page1.Mode, Page1.hibaSzam);
+            hibacount.Content = $"{jatek.hibaszam}/{jatek.max_hibaszam}";
 			Console.WriteLine(jatek.ValasztottSzo);
 			labellList = new List<Label> {
 				betu1, betu2, betu3, betu4, betu5,
@@ -42,11 +43,36 @@ namespace akasztoFa
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			jatek.CheckWord(fulltipp.Text);
-		}
+			hibacount.Content = $"{jatek.hibaszam}/{jatek.max_hibaszam}";
+            if (jatek.allapot != "folyamatban") nextpage.Visibility = Visibility.Visible;
+            if (jatek.allapot == "vesztett")
+            {
+                fulltipp.Visibility = Visibility.Hidden;
+                fulltipplabel.Visibility = Visibility.Hidden;
+                trybutton.Visibility = Visibility.Hidden;
+                betutipp.Visibility = Visibility.Hidden;
+                betutipplabel.Visibility = Visibility.Hidden;
+            }
+        }
 
 		private void betutipp_TextChanged(object sender, TextChangedEventArgs e) {
 			if (betutipp.Text.Length > 0) jatek.CheckChar(betutipp.Text.ToLower().First());
 			if (betutipp.Text.Length > 1) betutipp.Text = "";
-		}
+            hibacount.Content = $"{jatek.hibaszam}/{jatek.max_hibaszam}";
+			if (jatek.allapot != "folyamatban") nextpage.Visibility = Visibility.Visible;
+			if (jatek.allapot == "vesztett") {
+				fulltipp.Visibility = Visibility.Hidden;
+				fulltipplabel.Visibility = Visibility.Hidden;
+				trybutton.Visibility = Visibility.Hidden;
+				betutipp.Visibility = Visibility.Hidden;
+				betutipplabel.Visibility = Visibility.Hidden;
+			}
+        }
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+            Page3 page3 = new Page3();
+            NavigationService.Navigate(page3);
+        }
 	}
 }

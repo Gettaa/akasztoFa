@@ -13,10 +13,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="13*"/>
-            <RowDefinition Height="62*"/>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="102*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="neveredmeny" Content="x eddigi eredményei:" FontSize="18" Margin="292,12,323,12"/>
-        <ListBox x:Name="listeredmeny" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,10" BorderBrush="#FF6AACB9" BorderThickness="5,5,5,5" FontSize="16" SelectionChanged="ListBox_SelectionChanged"/>
+        <Label x:Name="neveredmeny" Grid.Row="1" Content="x eddigi eredményei:" FontSize="18" Margin="10,12,10,12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ListBox x:Name="listeredmeny" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,10" BorderBrush="#FF6AACB9" BorderThickness="5,5,5,5" FontSize="16" SelectionChanged="ListBox_SelectionChanged"/>
+        <Label x:Name="winlose" Content="Győztél!" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" Background="{x:Null}" Foreground="#FF5BA960" Height="162" Width="780"/>
     </Grid>
 </Page>
