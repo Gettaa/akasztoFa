@@ -27,12 +27,12 @@ namespace akasztoFa {
 
 		// jatekosok.txt feldolgozasa
 		public string Nev { get; private set; }
-		public int B_Nyert { get; private set; }
-		public int B_Vesztett { get; private set; }
-		public int M_Nyert { get; private set; }
-		public int M_Vesztett { get; private set; }
-		public int I_Nyert { get; private set; }
-		public int I_Vesztett { get; private set; }
+		public int B_Nyert { get; set; }
+		public int B_Vesztett { get; set; }
+		public int M_Nyert { get; set; }
+		public int M_Vesztett { get; set; }
+		public int I_Nyert { get; set; }
+		public int I_Vesztett { get; set; }
 
 		public Jatekos(string sor) {
 			string[] adatok = sor.Split(';');
