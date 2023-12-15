@@ -20,7 +20,7 @@ namespace akasztoFa
 	/// </summary>
 	public partial class Page2 : Page
 	{
-		private Jatek jatek;
+		public static Jatek jatek;
 		public static List<Label> labellList;
 
 		public Page2()

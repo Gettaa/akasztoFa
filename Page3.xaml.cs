@@ -23,6 +23,15 @@ namespace akasztoFa
         public Page3()
         {
             InitializeComponent();
+            neveredmeny.Content = $"{Page2.jatek.ValasztottJatekos.Nev} eddigi eredményei:";
+            if (allapot == "nyert") {
+                winlose.Foreground = new SolidColorBrush(Colors.DarkOliveGreen);
+                winlose.Content = "Győztél!";
+            }
+            if (allapot == "vesztett") {
+                winlose.Foreground = new SolidColorBrush(Colors.DarkRed);
+                winlose.Content = "Vesztettél!";
+            }
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
