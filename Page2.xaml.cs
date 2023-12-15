@@ -13,18 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace akasztoFa
-{
+namespace akasztoFa {
 	/// <summary>
 	/// Interaction logic for Page2.xaml
 	/// </summary>
-	public partial class Page2 : Page
-	{
+	public partial class Page2 : Page {
 		public static Jatek jatek;
 		public static List<Label> labellList;
 
-		public Page2()
-		{
+		public Page2() {
 			InitializeComponent();
             jatek = new Jatek(Page1.jatekosNev, Page1.Mode, Page1.hibaSzam);
             hibacount.Content = $"{jatek.hibaszam}/{jatek.max_hibaszam}";
@@ -40,13 +37,11 @@ namespace akasztoFa
 			labellList.ForEach(l => l.Visibility = Visibility.Visible);
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
+		private void Button_Click(object sender, RoutedEventArgs e) {
 			jatek.CheckWord(fulltipp.Text);
 			hibacount.Content = $"{jatek.hibaszam}/{jatek.max_hibaszam}";
             if (jatek.allapot != "folyamatban") nextpage.Visibility = Visibility.Visible;
-            if (jatek.allapot == "vesztett")
-            {
+            if (jatek.allapot == "vesztett") {
                 fulltipp.Visibility = Visibility.Hidden;
                 fulltipplabel.Visibility = Visibility.Hidden;
                 trybutton.Visibility = Visibility.Hidden;
@@ -69,8 +64,7 @@ namespace akasztoFa
 			}
         }
 
-		private void Button_Click_1(object sender, RoutedEventArgs e)
-		{
+		private void Button_Click_1(object sender, RoutedEventArgs e) {
             Page3 page3 = new Page3();
             NavigationService.Navigate(page3);
         }

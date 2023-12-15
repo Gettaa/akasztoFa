@@ -24,6 +24,7 @@ namespace akasztoFa
 
 		public Page1() {
 			InitializeComponent();
+			Adatok.Jatekosok.ForEach(j => playerchooser.Items.Add(j.Nev));
 		}
 
 		private void biobutton_Checked(object sender, RoutedEventArgs e) {
