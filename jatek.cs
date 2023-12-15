@@ -106,10 +106,13 @@ namespace akasztoFa {
 		public void CheckWord(string guess) {
 			guess = guess.ToLower();
 			if (guess == ValasztottSzo) {
-				foreach (char ch in ValasztottSzo) CheckChar(ch);
+				allapot = "nyert";
+				Ment();
 			}
-			else { hibaszam = max_hibaszam; }
-			CheckProgress();
+			else {
+				allapot = "vesztett";
+				Ment();
+			}
 		}
 	}
 }
