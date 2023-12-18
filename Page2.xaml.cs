@@ -20,7 +20,7 @@ namespace akasztoFa {
 	public partial class Page2 : Page {
 		public static Jatek jatek;
 		public static List<Label> labellList;
-
+		public static List<Image> imagelist;
 		public Page2() {
 			InitializeComponent();
             jatek = new Jatek(Page1.jatekosNev, Page1.Mode, Page1.hibaSzam);
@@ -35,7 +35,14 @@ namespace akasztoFa {
 			labellList.RemoveRange(jatek.ValasztottSzo.Length, labellList.Count - jatek.ValasztottSzo.Length);
 			labellList.TrimExcess();
 			labellList.ForEach(l => l.Visibility = Visibility.Visible);
-		}
+            imagelist = new List<Image> {
+                r1, r2, r3,
+                r4, r5, r6,
+                r7, r8, r9,
+                r10, r11, r12
+            };
+			Dead_Check();
+        }
 
 		private void Button_Click(object sender, RoutedEventArgs e) {
 			jatek.CheckWord(fulltipp.Text);
@@ -48,6 +55,7 @@ namespace akasztoFa {
                 betutipp.Visibility = Visibility.Hidden;
                 betutipplabel.Visibility = Visibility.Hidden;
             }
+			Dead_Check();
         }
 
 		private void betutipp_TextChanged(object sender, TextChangedEventArgs e) {
@@ -62,8 +70,18 @@ namespace akasztoFa {
 				betutipp.Visibility = Visibility.Hidden;
 				betutipplabel.Visibility = Visibility.Hidden;
 			}
+			Dead_Check();
         }
 
+		private void Dead_Check() {
+            for (int n = 0; n < jatek.hibaszam; n++) {
+                imagelist[n].Visibility = Visibility.Visible;
+            }
+			if (r12.IsVisible && jatek.hibaszam == 12) {
+				r12.Visibility = Visibility.Hidden;
+				rh.Visibility = Visibility.Visible;
+			}
+        }
 		private void Button_Click_1(object sender, RoutedEventArgs e) {
             Page3 page3 = new Page3();
             NavigationService.Navigate(page3);

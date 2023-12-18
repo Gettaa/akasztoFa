@@ -14,8 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace akasztoFa
-{
+namespace akasztoFa {
 	public partial class Page1 : Page {
 
 		public static char Mode = 'b';

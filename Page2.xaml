@@ -71,7 +71,7 @@
             <Label x:Name="betu11" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="358,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
             <Label x:Name="betu12" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="393,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
             <Label x:Name="betu13" Grid.Column="1" Content="_" HorizontalAlignment="Left" Margin="428,145,0,0" VerticalAlignment="Top" FontSize="25" Width="30" Height="49" HorizontalContentAlignment="Center"/>
-            <Rectangle Stroke="Black" VerticalAlignment="Center" Height="330" HorizontalAlignment="Center" Width="300"/>
+            <Rectangle Stroke="Black" VerticalAlignment="Top" Height="330" HorizontalAlignment="Left" Width="300" Margin="10,10,0,0"/>
             <Image x:Name="r1" Source="/r1.png" VerticalAlignment="Top" HorizontalAlignment="Left" Height="38" Width="112" Margin="32,320,0,0" Visibility="Hidden"/>
             <Image x:Name="r2" StretchDirection="UpOnly" Source="/r2.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top" Height="323" Width="48" Margin="41,17,0,0" Visibility="Hidden"/>
             <Image x:Name="r3" Stretch="None" Source="/r3.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="202" Margin="71,29,0,0" Visibility="Hidden"/>
@@ -85,7 +85,7 @@
             <Image x:Name="r11" Source="/r11.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="104" Width="115" Margin="67,48,0,0" Visibility="Hidden"/>
             <Image x:Name="r12" Margin="205,80,0,0" Source="/r12.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="38" Width="35" Visibility="Hidden"/>
             <Image x:Name="rh" Margin="205,83,0,0" Source="/rh.png" RenderTransformOrigin="0.509,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="34" Visibility="Hidden"/>
-            <Label x:Name="hibacount" Content="0/x&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="279,10,0,0" VerticalAlignment="Top" FontSize="15"/>
+            <Label x:Name="hibacount" Content="0/x&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" FontSize="15" Width="43" HorizontalContentAlignment="Right"/>
             <Button x:Name="nextpage" Grid.Column="1" Content="Következő oldal" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="26" Width="96" Click="Button_Click_1" Visibility="Hidden"/>
         </Grid>
     </Grid>
