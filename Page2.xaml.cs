@@ -79,7 +79,9 @@ namespace akasztoFa {
 				r12.Visibility = Visibility.Hidden;
 				rh.Visibility = Visibility.Visible;
 			}
-        }
+			if (jatek.isDuplicate) voltelabel.Visibility = Visibility.Visible;
+			else voltelabel.Visibility = Visibility.Hidden;
+		}
 		private void Button_Click_1(object sender, RoutedEventArgs e) {
             Page3 page3 = new Page3();
             NavigationService.Navigate(page3);

@@ -16,6 +16,7 @@ namespace akasztoFa {
 		public List<char> rossz_char = new List<char>();
 		public int hibaszam { get; private set; }
 		public string allapot { get; private set; } = "folyamatban";
+		public bool isDuplicate { get; private set; } = false;
 
 		private char Tipus;
 
@@ -59,10 +60,16 @@ namespace akasztoFa {
 		}
 
 		private void SortChar(char ch) {
-			if (ContainsChar(ch) && !kitalalt_char.Contains(ch)) kitalalt_char.Add(ch);
-			else if (ContainsChar(ch) && kitalalt_char.Contains(ch)) Console.WriteLine("Már volt helyes tipp");
-			if (!ContainsChar(ch) && !rossz_char.Contains(ch)) rossz_char.Add(ch);
-			else if (!ContainsChar(ch) && rossz_char.Contains(ch)) Console.WriteLine("Már volt hibás tipp");
+			if (ContainsChar(ch) && !kitalalt_char.Contains(ch)) {
+				kitalalt_char.Add(ch);
+				isDuplicate = false;
+			}
+			else if (ContainsChar(ch) && kitalalt_char.Contains(ch)) isDuplicate = true;
+			if (!ContainsChar(ch) && !rossz_char.Contains(ch)) {
+				rossz_char.Add(ch);
+				isDuplicate = false;
+			}
+			else if (!ContainsChar(ch) && rossz_char.Contains(ch)) isDuplicate = true;
 			rossz_char = rossz_char.Distinct().ToList();
 			kitalalt_char = kitalalt_char.Distinct().ToList();
 			hibaszam = rossz_char.Count;
