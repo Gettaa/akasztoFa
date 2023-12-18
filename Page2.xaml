@@ -87,6 +87,7 @@
             <Image x:Name="rh" Margin="205,83,0,0" Source="/rh.png" RenderTransformOrigin="0.509,0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="34" Visibility="Hidden"/>
             <Label x:Name="hibacount" Content="0/x&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="267,10,0,0" VerticalAlignment="Top" FontSize="15" Width="43" HorizontalContentAlignment="Right"/>
             <Button x:Name="nextpage" Grid.Column="1" Content="Következő oldal" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="26" Width="96" Click="Button_Click_1" Visibility="Hidden"/>
+            <Label x:Name="voltelabel" Grid.Column="1" Content="Volt már ilyen tipp!" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="16" Height="41"/>
         </Grid>
     </Grid>
 </Page>
