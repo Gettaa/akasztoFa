@@ -17,6 +17,7 @@ namespace akasztoFa {
 		public int hibaszam { get; private set; }
 		public string allapot { get; private set; } = "folyamatban";
 		public bool isDuplicate { get; private set; } = false;
+		private bool hasEnded = false;
 
 		private char Tipus;
 
@@ -76,28 +77,31 @@ namespace akasztoFa {
 		}
 
 		private void Ment() {
-			bool a;
-			if (allapot == "vesztett") a = false;
-			else if (allapot == "nyert") a = true;
-			else return;
+			if (!hasEnded) {
+				bool a;
+				if (allapot == "vesztett") a = false;
+				else if (allapot == "nyert") a = true;
+				else return;
 
-			switch (Tipus) {
-				case 'b':
-					if (a) ValasztottJatekos.B_Nyert++;
-					else if (!a) ValasztottJatekos.B_Vesztett++;
-					break;
-				case 'm':
-					if (a) ValasztottJatekos.M_Nyert++;
-					else if (!a) ValasztottJatekos.M_Vesztett++;
-					break;
-				case 'i':
-					if (a) ValasztottJatekos.I_Nyert++;
-					else if (!a) ValasztottJatekos.I_Vesztett++;
-					break;
-				default:
-					break;
+				switch (Tipus) {
+					case 'b':
+						if (a) ValasztottJatekos.B_Nyert++;
+						else if (!a) ValasztottJatekos.B_Vesztett++;
+						break;
+					case 'm':
+						if (a) ValasztottJatekos.M_Nyert++;
+						else if (!a) ValasztottJatekos.M_Vesztett++;
+						break;
+					case 'i':
+						if (a) ValasztottJatekos.I_Nyert++;
+						else if (!a) ValasztottJatekos.I_Vesztett++;
+						break;
+					default:
+						break;
+				}
+				Adatok.Ment();
+				hasEnded = true;
 			}
-			Adatok.Ment();
 		}
 
 		private void CheckProgress() {
