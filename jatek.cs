@@ -45,6 +45,14 @@ namespace akasztoFa {
 			}
 		}
 
+		private void UpdateLabels(bool b) {
+			for (int i = 0; i < Page2.labellList.Count; i++) {
+				char szoch = ValasztottSzo[i];
+				Page2.labellList[i].Content = szoch.ToString();
+			}
+		}
+
+
 		private bool ContainsChar(char ch) {
 			ch = char.ToLower(ch);
 			return ValasztottSzo.Contains(ch);
@@ -52,9 +60,9 @@ namespace akasztoFa {
 
 		private void SortChar(char ch) {
 			if (ContainsChar(ch) && !kitalalt_char.Contains(ch)) kitalalt_char.Add(ch);
-			else if (ContainsChar(ch) && kitalalt_char.Contains(ch)) Console.WriteLine("Mar volt helyes tipp");
+			else if (ContainsChar(ch) && kitalalt_char.Contains(ch)) Console.WriteLine("Már volt helyes tipp");
 			if (!ContainsChar(ch) && !rossz_char.Contains(ch)) rossz_char.Add(ch);
-			else if (!ContainsChar(ch) && rossz_char.Contains(ch)) Console.WriteLine("Mar volt hibas tipp");
+			else if (!ContainsChar(ch) && rossz_char.Contains(ch)) Console.WriteLine("Már volt hibás tipp");
 			rossz_char = rossz_char.Distinct().ToList();
 			kitalalt_char = kitalalt_char.Distinct().ToList();
 			hibaszam = rossz_char.Count;
@@ -88,13 +96,14 @@ namespace akasztoFa {
 		private void CheckProgress() {
 			if (hibaszam >= max_hibaszam) {
 				allapot = "vesztett";
+				UpdateLabels(false);
 				Ment();
 			}
 			else if (kitalalt_char.Count == ValasztottSzo.Distinct().ToList().Count) {
 				allapot = "nyert";
+				UpdateLabels(true);
 				Ment();
 			}
-			Console.WriteLine(allapot);
 		}
 
 		public void CheckChar(char ch) {
@@ -107,10 +116,13 @@ namespace akasztoFa {
 			guess = guess.ToLower();
 			if (guess == ValasztottSzo) {
 				allapot = "nyert";
+				UpdateLabels(true);
 				Ment();
 			}
 			else {
 				allapot = "vesztett";
+				hibaszam = max_hibaszam;
+				UpdateLabels(false);
 				Ment();
 			}
 		}
